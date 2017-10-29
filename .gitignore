@@ -1,0 +1,9 @@
+logs
+*.log
+pids
+node_modules
+.npm
+*.dat
+.env
+.DS_Store
+npm-debug.log
