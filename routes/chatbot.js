@@ -1,4 +1,6 @@
 require('dotenv').config();
+const greekUtils = require('greek-utils');
+
 
 /*
  * Be sure to setup your config values before running this code. You can
@@ -49,6 +51,8 @@ router.post('/webhook', (req, res) => {
 function sendMessage(event) {
     let sender = event.sender.id;
     let text = event.message.text;
+
+    text = greekUtils.toGreeklish(text);
 
     let apiai = dialogFlow.textRequest(text, {
         sessionId: 'someid' // use any arbitrary id
